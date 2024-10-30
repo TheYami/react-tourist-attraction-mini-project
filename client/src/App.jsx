@@ -1,7 +1,14 @@
 import "./App.css";
+import {Route,Routes,BrowserRouter} from 'react-router-dom'
+import Homepage from "./components/Homepage";
 
 function App() {
-  return <div className="App">{/* Start coding here */}</div>;
-}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage/>}/>
+      </Routes>
+    </BrowserRouter>
+  )}
 
 export default App;
