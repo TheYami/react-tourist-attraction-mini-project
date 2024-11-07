@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import trips from "./db.js";
+import trips from "../db";
 
 const app = express();
 const port = process.env.PORT || 4001;
