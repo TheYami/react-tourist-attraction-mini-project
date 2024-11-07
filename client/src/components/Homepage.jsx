@@ -8,6 +8,8 @@ function Homepage() {
     const [expandedTripId, setExpandedTripId] = useState(null);
     const [copyId, setCopyId] = useState(null)
 
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4001"; 
+
     const handleClickReadMore = (id) => {
         // console.log(id);
         setExpandedTripId(expandedTripId === id ? null : id);
@@ -37,7 +39,7 @@ function Homepage() {
 
     const fetchingAllData = async () => {
         try {
-            const response = await axios.get('http://localhost:4001/trips');
+            const response = await axios.get(`${API_URL}/trips`);
             setTrips(response.data.data);
         } catch (error) {
             console.log("Fail to fetch all data", error);
@@ -54,7 +56,7 @@ function Homepage() {
                 fetchingAllData();
             } else {
                 try {
-                    const response = await axios.get(`http://localhost:4001/trips?keywords=${searchTrip}`);
+                    const response = await axios.get(`${API_URL}/trips?keywords=${searchTrip}`);
                     setTrips(response.data.data); 
                 } catch (error) {
                     console.log("เกิดข้อผิดพลาดในการค้นหาข้อมูล", error);
