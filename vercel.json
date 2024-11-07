@@ -17,7 +17,7 @@
       },
       {
         "src": "/api/(.*)",
-        "dest": "/server/api/$1.js"
+        "dest": "/server/api/trips.js"
       }
     ]
   }

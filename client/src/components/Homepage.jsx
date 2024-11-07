@@ -8,7 +8,7 @@ function Homepage() {
     const [expandedTripId, setExpandedTripId] = useState(null);
     const [copyId, setCopyId] = useState(null)
 
-    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4001"; 
+    const API_URL =  "http://localhost:4001"; 
 
     const handleClickReadMore = (id) => {
         // console.log(id);
